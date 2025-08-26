@@ -1,0 +1,147 @@
+:root {
+  --color-ocean-dark: #0b2e3c;
+  --color-ocean-accent: #217c9e;
+
+  --color-parchment: #f6f1e7;
+  --color-parchment-semi-aged: #e0d9cd;
+  --color-parchment-aged: #C2B28B;
+  --color-parchment-dried: #A89F91;
+  --color-parchment-old: #B19C7D;
+
+  --color-accent-gold: #c28840;
+
+  --color-ink: #1D1B2E;
+  --color-ink-squid: #22303C;
+  --color-ink-iron: #2E2D36;
+  --color-ink-violet: #2A1F3D;
+
+  --color-class: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b2e3c;
+  color: var(--color-ink);
+  font-family: "Segoe UI", "Georgia", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  padding: 0;
+  margin: 0;
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.center {
+  text-align: center !important;
+}
+
+#root {
+  max-width: 1280px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #f6f1e7;
+}
+
+.page-content {
+  padding: 2rem 1.5rem 5rem 1.5rem;
+}
+
+.divider {
+  background-color: var(--color-parchment-aged);
+  border-radius: 0.25rem;
+
+  &.large {
+    height: 0.2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    opacity: 0.75;
+  }
+
+  &.small {
+    height: 0.2rem;
+    margin: 1.5rem;
+    opacity: 0.5;
+    width: 25%;
+  }
+}
+
+.tshadow-black {
+  text-shadow:
+    1px 1px 0px black,
+    -1px -1px 0px black,
+    1px -1px 0px black,
+    -1px 1px 0px black;
+}
+
+.no-borders {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+}
+
+.mt-b {
+  margin-top: 3rem;
+}
+.mv-b {
+  margin: 3rem 0;
+}
+.mb-b {
+  margin-bottom: 3rem;
+}
+
+.mt-h {
+  margin-top: 0.5rem;
+}
+.mt-1 {
+  margin-top: 1rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mv-1 {
+  margin: 1rem 0;
+}
+.mv-2 {
+  margin: 2rem 0;
+}
+.mv-3 {
+  margin: 3rem 0;
+}
+
+.mb-h {
+  margin-bottom: 0.5rem;
+}
+.mb-1 {
+  margin-bottom: 1rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.flex {
+  display: flex;
+}
+.flex-1 {
+  flex-grow: 1;
+}

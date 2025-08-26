@@ -1,0 +1,25 @@
+.definition {
+  margin-bottom: 0.5rem;
+  border-top: 0.25rem solid transparent;
+  border-bottom: 0.25rem solid transparent;
+  padding: 0.25rem 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  & .label {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    font-weight: bold;
+  }
+
+  &.selectable {
+    cursor: pointer;
+  }
+
+  &.selected {
+    border-color: var(--color-class);
+    background-color: color-mix(in srgb, var(--color-class) 10%, transparent);
+  }
+}

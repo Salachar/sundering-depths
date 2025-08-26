@@ -1,0 +1,38 @@
+.class-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .button-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  button {
+    cursor: pointer;
+    font-size: 1.35rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: transparent;
+    border: none;
+  }
+
+  .class-button {
+    padding: 1rem 1rem 0.5rem 1rem;
+  }
+}
+
+.name-container {
+  cursor: pointer;
+}
+
+.class-arrow {
+  margin: 0 auto;
+  width: 5rem;
+  color: var(--color-class);
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid currentColor;
+}

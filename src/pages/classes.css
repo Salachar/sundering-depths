@@ -1,0 +1,19 @@
+.character-container {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "tabs data";
+
+  &.empty {
+    grid-template-columns: 1fr;
+  }
+}
+
+.character-tabs-container {
+  grid-area: tabs;
+  margin-right: 1.5rem;
+}
+
+.character-data-container {
+  grid-area: data;
+}

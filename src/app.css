@@ -1,0 +1,15 @@
+.nav-links {
+   background-color: var(--color-parchment-dried);
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 1rem 3rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--color-ink);
+}
+
+.nav-link.active {
+  background-color: var(--color-parchment);
+}
