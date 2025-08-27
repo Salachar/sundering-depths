@@ -1,15 +1,43 @@
 .nav-links {
    background-color: var(--color-parchment-dried);
+   overflow: hidden;
 }
 
 .nav-link {
+  position: relative;
   display: inline-block;
   padding: 1rem 3rem;
   text-decoration: none;
   font-weight: bold;
   color: var(--color-ink);
+  height: 4rem;
+  line-height: 2rem;
 }
 
 .nav-link.active {
   background-color: var(--color-parchment);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 0;
+    border-right: 0.75rem solid var(--color-parchment);
+    border-bottom: 2rem solid var(--color-parchment);
+    border-left: 0.75rem solid var(--color-parchment-dried);
+    border-top: 2rem solid var(--color-parchment-dried);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    border-right: 0.75rem solid var(--color-parchment-dried);
+    border-bottom: 2rem solid var(--color-parchment);
+    border-left: 0.75rem solid var(--color-parchment);
+    border-top: 2rem solid var(--color-parchment-dried);
+  }
 }
