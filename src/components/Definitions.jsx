@@ -31,7 +31,7 @@ export default function Definitions ({
           return (
             <div
               key={`key_def_${index}`}
-              className={`definition ${selectable ? "selectable" : ""} ${(!locked && isSelected) ? "selected" : ""}`}
+              className={`definition ${selectable ? "selectable" : ""} ${(!locked && isSelected && selectable) ? "selected" : ""}`}
               onClick={() => {
                 if (!selectable) return;
                 onClick(definition, index);

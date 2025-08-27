@@ -26,7 +26,7 @@ export default function CharacterTemplate({
 
       <div className={`stat-block no-borders ${builder ? "mb-b" : "mv-b"}`}>
         <div className="character-meta">
-          <h1>{character.class}</h1>
+          <h1 className="character-class">{character.class}</h1>
           <div className="character-descriptors">
             {character.descriptors.map((desc, index) => (
               <div key={`${character.class}_meta_${index}`}>
@@ -73,8 +73,10 @@ export default function CharacterTemplate({
             <div className="bar-background">
               <div
                 className="bar-foreground"
-                style={{ width: `${(character.current_health / character.max_health) * 100}%` }}
-              ></div>
+                style={{
+                  width: `${(character.current_health / character.max_health) * 100}%`
+                }}
+              />
             </div>
             <button className="left" onClick={() => {
               character.current_health = character.current_health - 1;
@@ -193,7 +195,7 @@ export default function CharacterTemplate({
 
             <Definitions
               locked={character.locked}
-              selectable
+              selectable={builder}
               h3={(!character.locked && builder)? `Abilities (${character.selected_abilities_amount}/${character.max_selectable_abilities} selected)` : "Abilities"}
               definitions={character.abilities}
               selected={character.selected_abilities}
