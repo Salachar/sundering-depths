@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { CLASSES } from "../data/builder";
 import BuilderManager from "../data/builder";
@@ -9,7 +10,18 @@ import CharacterTemplate from "../components/CharacterTemplate";
 
 import "./classes.css";
 
+
+const setClassColor = (classData) => {
+  let data = classData;
+  if (classData.instance) classData = classData.instance;
+  if (!classData.color) return;
+  document.documentElement.style.setProperty('--color-class', classData.color);
+}
+
 export default function Classes () {
+  const navigate = useNavigate();
+  const { slug } = useParams();
+
   const [tabIndex, setTabIndex] = useState(null);
 
   const [currentCharacter, setCurrentCharacter] = useState(null);
@@ -19,31 +31,59 @@ export default function Classes () {
   const [timestamp, setTimestamp] = useState(Date.now());
 
   useEffect(() => {
-    checkCharacters();
+    checkCharacters(null, slug);
   }, []);
 
-  const checkCharacters = (currentCharacterOverride) => {
+  const setCharAndColor = (character) => {
+    setCurrentCharacter(character);
+    setClassColor(character);
+  }
+
+  const checkCharacters = (currentCharacterOverride, slug) => {
     let currChar = currentCharacter;
     if (currentCharacterOverride !== undefined) {
       currChar = currentCharacterOverride;
+    }
+
+    if (slug) {
+      for (let i = 0; i < CLASSES.length; ++i) {
+        const class_data = CLASSES[i];
+        if (class_data.id === slug) {
+          setIsBuilder(false);
+          setTabIndex(i);
+          setCharAndColor(class_data.instance);
+          return;
+        }
+      }
     }
 
     const chars = BuilderManager.characters;
     const char_keys = Object.keys(chars);
 
     if (!char_keys.length) {
-      // No custom characters, set to first class data
       setIsBuilder(false);
-      setCurrentCharacter(CLASSES[0].instance);
+      setTabIndex(0);
+      setCharAndColor(CLASSES[0].instance);
       return;
+    }
+
+    if (slug) {
+      for (let i = 0; i < char_keys.length; ++i) {
+        const char_key = char_keys[i];
+        if (char_key === slug) {
+          setIsBuilder(true);
+          setTabIndex(null);
+          setCharAndColor(chars[char_key]);
+          return;
+        }
+      }
     }
 
     const firstChar = chars[char_keys[0]];
     if (!currChar && firstChar && firstChar.id) {
-      // Set to first custom character
+      setIsBuilder(true);
       setTabIndex(null);
-      setCurrentCharacter(firstChar);
-      document.documentElement.style.setProperty('--color-class', firstChar.color);
+      setCharAndColor(firstChar);
     }
   }
 
@@ -58,17 +98,17 @@ export default function Classes () {
         currentIndex={tabIndex}
         onClick={({instance, index}) => {
           setTabIndex(index);
-          setCurrentCharacter(instance);
+          setCharAndColor(instance);
           setIsBuilder(false);
-          document.documentElement.style.setProperty('--color-class', instance.color);
+          navigate(`/classes/${instance.class_id}`);
         }}
         onAdd={({constructor}) => {
           const new_character = new constructor();
           BuilderManager.addCharacter(new_character);
           setTabIndex(null);
-          setCurrentCharacter(new_character);
+          setCharAndColor(new_character);
           setIsBuilder(true);
-          document.documentElement.style.setProperty('--color-class', constructor.color);
+          navigate(`/classes/${new_character.id}`);
         }}
       />
 
@@ -79,13 +119,14 @@ export default function Classes () {
               currentCharacter={currentCharacter}
               onSelect={(character) => {
                 setTabIndex(null);
-                setCurrentCharacter(character);
+                setCharAndColor(character);
                 setIsBuilder(true);
-                document.documentElement.style.setProperty('--color-class', character.color);
+                navigate(`/classes/${character.id}`);
               }}
               onClose={(character, id) => {
                 if (currentCharacter && id === currentCharacter?.id) {
                   setCurrentCharacter(null);
+                  navigate(`/classes`);
                 }
                 BuilderManager.deleteCharacter(id);
                 checkCharacters(null);

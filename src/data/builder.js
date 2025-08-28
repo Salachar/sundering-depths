@@ -14,30 +14,43 @@ export const CLASS_MAP = {
   [HydrotechClass.class]: HydrotechClass,
 };
 
+const ScorcherInstance = new ScorcherClass();
+const SteampunkInstance = new SteampunkClass();
+const FloodbornInstance = new FloodbornClass();
+const HotshotInstance = new HotshotClass();
+const PackratInstance = new PackratClass();
+const HydrotechInstance = new HydrotechClass();
+
 export const CLASSES = [
   {
+    id: ScorcherInstance.class_id,
     constructor: ScorcherClass,
-    instance: new ScorcherClass(),
+    instance: ScorcherInstance,
   },
   {
+    id: SteampunkInstance.class_id,
     constructor: SteampunkClass,
-    instance: new SteampunkClass(),
+    instance: SteampunkInstance,
   },
   {
+    id: FloodbornInstance.class_id,
     constructor: FloodbornClass,
-    instance: new FloodbornClass(),
+    instance: FloodbornInstance,
   },
   {
+    id: HotshotInstance.class_id,
     constructor: HotshotClass,
-    instance: new HotshotClass(),
+    instance: HotshotInstance,
   },
   {
+    id: PackratInstance.class_id,
     constructor: PackratClass,
-    instance: new PackratClass(),
+    instance: PackratInstance,
   },
   {
+    id: HydrotechInstance.class_id,
     constructor: HydrotechClass,
-    instance: new HydrotechClass(),
+    instance: HydrotechInstance,
   },
 ];
 

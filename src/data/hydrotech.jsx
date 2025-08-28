@@ -7,6 +7,8 @@ export default class HydrotechClass extends BaseClass {
     super(data);
   }
 
+  static id = "hydrotech";
+
   static base_health = 8;
 
   static movement = 20;

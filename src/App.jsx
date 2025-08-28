@@ -16,7 +16,7 @@ export default function App() {
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/classes" element={<Classes />} />
+        <Route path="/classes/:slug?" element={<Classes />} />
         {/* <Route path="/map" element={<Map />} /> */}
       </Routes>
     </>

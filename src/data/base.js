@@ -182,6 +182,10 @@ class BaseClass {
     this._locked = !this._locked;
   }
 
+  get class_id () {
+    return this.constructor.id;
+  }
+
   get name () {
     return this._name;
   }

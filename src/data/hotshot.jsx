@@ -7,6 +7,8 @@ export default class HotshotClass extends BaseClass {
     super(data);
   }
 
+  static id = "hotshot";
+
   static base_health = 10;
 
   static movement = 20;

@@ -7,6 +7,8 @@ export default class FloodbornClass extends BaseClass {
     super(data);
   }
 
+  static id = "floodborn";
+
   static base_health = 10;
 
   static movement = 20;

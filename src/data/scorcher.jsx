@@ -7,6 +7,8 @@ export default class ScorcherClass extends BaseClass {
     super(data);
   }
 
+  static id = "scorcher";
+
   static base_health = 12;
 
   static movement = 20;

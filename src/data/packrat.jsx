@@ -7,6 +7,8 @@ export default class PackratClass extends BaseClass {
     super(data);
   }
 
+  static id = "packrat";
+
   static base_health = 8;
 
   static movement = 20;

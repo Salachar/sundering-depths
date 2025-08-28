@@ -7,6 +7,8 @@ export default class SteampunkClass extends BaseClass {
     super(data);
   }
 
+  static id = "steampunk";
+
   static base_health = 12;
 
   static movement = 20;
