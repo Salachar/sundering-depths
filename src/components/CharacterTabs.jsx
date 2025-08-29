@@ -16,21 +16,24 @@ export default function CharacterTabs ({
           <div
             key={`key_character_${id}`}
             className={`tab ${curr ? "selected" : ""}`}
+            onClick={() => {
+              console.log('thing')
+              onSelect(character);
+            }}
             style={{
               borderColor: character.color,
             }}
           >
-            <button className="name" onClick={() => {
-              onSelect(character);
-            }}>
-              {`${character.name || "No Name"} (${character.class})`}
-            </button>
-            {/* <button
+            <div className="class">{character.class}</div>
+            <div className="name">{character.name || "No Name"}</div>
+            <button
               className="close"
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation();
+                if (!curr) return;
                 onClose(character, id);
               }}
-            >&times;</button> */}
+            >&times;</button>
           </div>
         );
       })}
