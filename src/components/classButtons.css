@@ -14,18 +14,19 @@
     cursor: pointer;
     font-size: 1.35rem;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     background-color: transparent;
     border: none;
   }
 
   .class-button {
-    padding: 1rem 1rem 0.5rem 1rem;
+    padding: 1rem 0rem 0.5rem 0;
   }
 }
 
 .name-container {
   cursor: pointer;
+  padding-left: 1rem;
 }
 
 .class-arrow {
@@ -35,4 +36,9 @@
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   border-top: 20px solid currentColor;
+}
+
+.class-button-add {
+  min-height: var(--click-height);
+  width: var(--click-height);
 }

@@ -16,4 +16,5 @@
 
 .character-data-container {
   grid-area: data;
+  position: relative;
 }

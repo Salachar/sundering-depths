@@ -23,14 +23,14 @@ export default function CharacterTabs ({
             <button className="name" onClick={() => {
               onSelect(character);
             }}>
-              {`${character.name} (${character.class})`}
+              {`${character.name || "No Name"} (${character.class})`}
             </button>
-            <button
+            {/* <button
               className="close"
               onClick={() => {
                 onClose(character, id);
               }}
-            >&times;</button>
+            >&times;</button> */}
           </div>
         );
       })}

@@ -32,7 +32,7 @@ export default function ClassButtons ({
                 <button
                   key={`class_button_${ci.class}`}
                   className="class-button"
-                  style={textOutline(ci.color)}
+                  style={textOutline(ci.color, 15)}
                 >
                   {ci.class}
                 </button>
@@ -53,7 +53,7 @@ export default function ClassButtons ({
                     index,
                   });
                 }}
-                style={textOutline(ci.color)}
+                style={textOutline(ci.color, 1)}
               >
                 +
               </button>

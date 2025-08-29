@@ -3,6 +3,7 @@
   border-top: 0.25rem solid transparent;
   border-bottom: 0.25rem solid transparent;
   padding: 0.25rem 0;
+  min-height: var(--click-height);
 
   &:last-child {
     margin-bottom: 0;

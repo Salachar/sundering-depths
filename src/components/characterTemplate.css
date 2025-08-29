@@ -11,8 +11,30 @@
 }
 
 .lock-button {
-  width: 80px;
-  height: 40px;
+  width: 7rem;
+  height: var(--click-height);
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background-color: var(--color-parchment-aged);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: rgba(60, 40, 40, 0.6);
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 0;
+    border-right: 0.75rem solid var(--color-parchment-aged);
+    border-top: 1.5rem solid var(--color-parchment-aged);
+    border-bottom: 1.5rem solid transparent;
+    border-left: 0.75rem solid transparent;
+  }
 }
 
 .character-class {
@@ -77,17 +99,16 @@
   border: 0;
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
-  height: 40px;
+  height: var(--click-height);
 }
 
 .character-name-locked {
   flex-grow: 1;
-  height: 40px;
-  line-height: 40px;
+  height: var(--click-height);
+  line-height: var(--click-height);
 }
 
 .character-health {
-  /* background-color: rgb(192, 57, 43); */
   display: flex;
   justify-content: center;
   margin: 1rem 0;
@@ -117,7 +138,7 @@
 
   button {
     flex: 1;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
     background-color: transparent;
     border: none;
     margin: 0;
@@ -127,6 +148,8 @@
     color: rgba(255, 255, 255, 0.5);
     text-align: left;
     z-index: 2;
+    height: var(--click-height);
+
     &.left {
       text-align: left;
     }
@@ -152,6 +175,7 @@
   font-size: 1.5rem;
   color: white;
   position: relative;
+  height: var(--click-height);
 
   .bar {
     position: absolute;
@@ -192,6 +216,7 @@
     color: rgba(255, 255, 255, 0.5);
     text-align: left;
     z-index: 2;
+    height: var(--click-height);
     &.left {
       text-align: left;
     }

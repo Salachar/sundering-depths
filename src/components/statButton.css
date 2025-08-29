@@ -33,6 +33,11 @@
 
       button {
         padding: 0.5rem 1rem;
+        height: var(--click-height);
+        width: var(--click-height);
+        border: none;
+        background-color: var(--color-parchment-aged);
+        font-weight: bold;
       }
     }
   }

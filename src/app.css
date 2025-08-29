@@ -12,6 +12,8 @@
   color: var(--color-ink);
   height: 4rem;
   line-height: 2rem;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
 }
 
 .nav-link.active {

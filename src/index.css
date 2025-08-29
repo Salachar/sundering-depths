@@ -5,17 +5,21 @@
   --color-parchment: #f6f1e7;
   --color-parchment-semi-aged: #e0d9cd;
   --color-parchment-aged: #C2B28B;
+
+  /* Nav background */
   --color-parchment-dried: #A89F91;
-  --color-parchment-old: #B19C7D;
+  /* --color-parchment-old: #B19C7D; */
 
   --color-accent-gold: #c28840;
 
   --color-ink: #1D1B2E;
   --color-ink-squid: #22303C;
   --color-ink-iron: #2E2D36;
-  --color-ink-violet: #2A1F3D;
+  /* --color-ink-violet: #2A1F3D; */
 
   --color-class: black;
+
+  --click-height: 3rem;
 }
 
 * {

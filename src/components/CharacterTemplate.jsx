@@ -14,6 +14,19 @@ export default function CharacterTemplate({
 
   return (
     <>
+      {builder && (
+        <button
+          className="lock-button"
+          type="button"
+          onClick={() => {
+            character.toggleLock();
+            onUpdate();
+          }}
+        >
+          {character.locked ? "Unlock" : "Lock"}
+        </button>
+      )}
+
       {!builder && (
         <div className="stat-block mb-b">
           {character.description.map((paragraph, index) => (
@@ -52,19 +65,9 @@ export default function CharacterTemplate({
             )}
             {character.locked && (
               <div className="character-name-locked">
-                <h1>{character.name}</h1>
+                <h1>{character.name || "No Name"}</h1>
               </div>
             )}
-            <button
-              className="lock-button"
-              type="button"
-              onClick={() => {
-                character.toggleLock();
-                onUpdate();
-              }}
-            >
-              {character.locked ? "Unlock" : "Lock"}
-            </button>
           </div>
         )}
 

@@ -17,6 +17,11 @@
   }
 }
 
+.dice-roll-button {
+  height: var(--click-height);
+  width: var(--click-height);
+}
+
 .dice-group {
   display: flex;
   flex-wrap: wrap;
@@ -38,14 +43,14 @@
   cursor: pointer;
 
   &.d6 {
-    width: 40px;
-    height: 40px;
+    width: var(--click-height);
+    height: var(--click-height);
     border-radius: 0.25rem;
   }
 
   &.d12 {
-    width: 50px;
-    height: 50px;
+    width: 64px;
+    height: 64px;
     clip-path: polygon(
       50% 0,
       100% 38%,

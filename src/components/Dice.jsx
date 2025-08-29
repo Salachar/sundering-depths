@@ -114,7 +114,7 @@ export default function Dice({
       )}
       {rollable && (
         <div className="dice-wrapper">
-          <button onClick={rerollAll}>
+          <button className="dice-roll-button" onClick={rerollAll}>
             Roll
           </button>
 
