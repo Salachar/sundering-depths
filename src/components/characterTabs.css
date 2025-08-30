@@ -3,7 +3,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   margin-bottom: 1rem;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .tab {
@@ -33,22 +33,36 @@
   }
 
   .close {
+    position: relative;
     height: calc(var(--click-height) / 2);
     border: none;
     width: var(--click-height);
     margin-top: 1rem;
-    background-color: rgb(192, 57, 43, 0.7);
+    background-color: rgb(192, 57, 43, 1);
     color: white;
     font-weight: 900;
     cursor: pointer;
     transition: 0.5s all ease;
+    opacity: 0.5;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 0;
+      border-right: 0.75rem solid transparent;
+      border-bottom: 2rem solid rgb(192, 57, 43, 1);
+      border-left: 0.75rem solid rgb(192, 57, 43, 1);
+      border-top: 2rem solid transparent;
+    }
   }
 
   &.selected {
     opacity: 1;
     .close {
       &:hover {
-        background-color: rgb(192, 57, 43, 1);
+        opacity: 1;
       }
     }
   }

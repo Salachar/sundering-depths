@@ -14,10 +14,12 @@
   line-height: 2rem;
   font-size: 1.25rem;
   letter-spacing: 1px;
+  box-sizing: border-box;
 }
 
 .nav-link.active {
   background-color: var(--color-parchment);
+  color: var(--color-accent-gold);
 
   &::before {
     content: "";
@@ -27,8 +29,8 @@
     width: 0;
     border-right: 0.75rem solid var(--color-parchment);
     border-bottom: 2rem solid var(--color-parchment);
-    border-left: 0.75rem solid var(--color-parchment-dried);
-    border-top: 2rem solid var(--color-parchment-dried);
+    border-left: 0.75rem solid transparent;
+    border-top: 2rem solid transparent;
   }
 
   &::after {
@@ -37,9 +39,9 @@
     top: 0;
     left: 100%;
     width: 0;
-    border-right: 0.75rem solid var(--color-parchment-dried);
+    border-right: 0.75rem solid transparent;
     border-bottom: 2rem solid var(--color-parchment);
     border-left: 0.75rem solid var(--color-parchment);
-    border-top: 2rem solid var(--color-parchment-dried);
+    border-top: 2rem solid transparent;
   }
 }

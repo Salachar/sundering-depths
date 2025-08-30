@@ -1,4 +1,5 @@
 .class-buttons {
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
