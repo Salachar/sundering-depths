@@ -21,8 +21,8 @@ export default class ScorcherClass extends BaseClass {
 
   static descriptors = [
     "melee",
-    "movement",
-    "fire",
+    "damage",
+    "move enemies",
   ];
 
   static description = [

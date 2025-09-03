@@ -21,8 +21,8 @@ export default class HydrotechClass extends BaseClass {
 
   static descriptors = [
     "ranged",
-    "caster",
-    "hydromancy",
+    "support",
+    "damage",
   ];
 
   static description = [

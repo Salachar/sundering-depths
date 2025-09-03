@@ -21,8 +21,8 @@ export default class PackratClass extends BaseClass {
 
   static descriptors = [
     "melee",
-    "utility",
-    "rogue-ish",
+    "support",
+    "rogue/bard-ish"
   ];
 
   static description = [

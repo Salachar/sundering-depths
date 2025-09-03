@@ -21,8 +21,8 @@ export default class SteampunkClass extends BaseClass {
 
   static descriptors = [
     "melee",
-    "half-caster",
-    "cover",
+    "support",
+    "create cover",
   ];
 
   static description = [

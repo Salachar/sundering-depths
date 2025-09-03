@@ -84,23 +84,33 @@ class BuilderManager {
   }
 
   save () {
-    const chars = this.characters;
-    const charJSON = {};
-    Object.keys(chars).forEach((c_id) => {
-      const c = chars[c_id];
-      charJSON[c.id] = c.toJSON();
-    })
-    localStorage.setItem('saved_characters', JSON.stringify(charJSON));
+    try {
+      const chars = this.characters;
+      const charJSON = {};
+      Object.keys(chars).forEach((c_id) => {
+        const c = chars[c_id];
+        charJSON[c.id] = c.toJSON();
+      })
+      localStorage.setItem('saved_characters', JSON.stringify(charJSON));
+    } catch (e) {
+      console.log("Failed to save characters", e);
+    }
+
   }
 
   load () {
-    const chars = localStorage.getItem('saved_characters');
-    const parsed = JSON.parse(chars);
-    Object.keys(parsed).forEach((c_id) => {
-      const c_json = parsed[c_id];
-      const new_character = new CLASS_MAP[c_json.class](c_json);
-      this.addCharacter(new_character);
-    })
+    try {
+      const chars = localStorage.getItem('saved_characters');
+      const parsed = JSON.parse(chars);
+      Object.keys(parsed).forEach((c_id) => {
+        const c_json = parsed[c_id];
+        const new_character = new CLASS_MAP[c_json.class](c_json);
+        this.addCharacter(new_character);
+      });
+    } catch (e) {
+      console.log("Failed to load characters", e);
+    }
+
   }
 }
 

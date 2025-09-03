@@ -21,8 +21,8 @@ export default class FloodbornClass extends BaseClass {
 
   static descriptors = [
     "ranged",
-    "half-caster",
-    "mutant",
+    "support",
+    "crowd control",
   ];
 
   static description = [

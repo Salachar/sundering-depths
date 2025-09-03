@@ -21,8 +21,8 @@ export default class HotshotClass extends BaseClass {
 
   static descriptors = [
     "ranged",
-    "movement",
-    "glass-cannon",
+    "high damage",
+    "inconsistent"
   ];
 
   static description = [
