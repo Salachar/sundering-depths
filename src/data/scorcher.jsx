@@ -142,7 +142,7 @@ export default class ScorcherClass extends BaseClass {
       type: "basic",
       description: (
         <>
-          Slap some pitch on it and keep moving. Gain 1d6 health and move 10ft. Can heal adjacent allies.
+          Slap some pitch on it. Gain 1d10 health. Can heal adjacent allies. Any non-Scorchers healed by this must make a CON save or take 1d4 damage.
         </>
       ),
     },
@@ -160,7 +160,7 @@ export default class ScorcherClass extends BaseClass {
       type: "advancement",
       description: (
         <>
-          Attach to a door. On detonation, door is destroyed; creatures within 10 ft on other side are <b>DAZED</b>.
+          Attach to a door. On detonation, door is destroyed; creatures within 10 ft on other side are <Glossary.Daze past />.
         </>
       ),
     },
@@ -178,7 +178,7 @@ export default class ScorcherClass extends BaseClass {
       type: "capstone",
       description: (
         <>
-          Cover your weapon in thick pitch and ignite it. Your attacks deal an additional 1d12 fire damage. Last for 2 rounds.
+          Cover your weapon in thick pitch and ignite it. Any attacks this round deal an additional 1d12 fire damage.
         </>
       ),
     }

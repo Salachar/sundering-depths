@@ -136,7 +136,7 @@ export default class SteampunkClass extends BaseClass {
       type: "basic",
       description: (
         <>
-          Wrap some tape around and keep going. Heal 3 health AND move 5ft. Can heal adjacent allies.
+          Wrap some tape around and keep going. Heal 3 health AND move 10ft. Heal can be applied to adjacent allies.
         </>
       ),
     },

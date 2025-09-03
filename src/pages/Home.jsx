@@ -57,7 +57,11 @@ export default function Home () {
             <tbody>
               <tr>
                 <td><strong>STR</strong></td>
-                <td>+/- 1 DR per point</td>
+                <td>
+                  +/- 1 Damage per point on Attack Effect table.
+                  <br />
+                  +/- 1 to hit enemy
+                </td>
               </tr>
               <tr>
                 <td><strong>DEX</strong></td>
@@ -69,7 +73,11 @@ export default function Home () {
               </tr>
               <tr>
                 <td><strong>CON</strong></td>
-                <td>+/- 4 HP per point</td>
+                <td>
+                  +/- 1 Damage Reduction per point on Defense Effect table.
+                  <br />
+                  +/- 4 HP per point
+                </td>
               </tr>
             </tbody>
           </table>
@@ -79,10 +87,10 @@ export default function Home () {
       <div className="stat-block no-borders mv-b">
         <h3>Abilities</h3>
         <ul>
-          <li>Choose 3 of the available abilities.</li>
-          <li>If multiclassing, choose 6 abilities between the two class tables.</li>
+          <li>Choose 3 of the available abilities from the class table.</li>
+          {/* <li>If multiclassing, choose 6 abilities between the two class tables.</li> */}
           <li>Using an ability takes a use.</li>
-
+          <li>Uses can be gained back through means at DM discretion</li>
         </ul>
       </div>
 
@@ -97,10 +105,11 @@ export default function Home () {
 
           <h2>Players</h2>
           <h3>Offense</h3>
+          <span>The following actions can be taken in any order:</span>
           <ul>
-            <li>Move up to movement speed</li>
-            <li>Use an ability (optional)</li>
-            <li>Make a weapon attack</li>
+            <li><b>Movement</b>: Move up to movement speed</li>
+            <li><b>Ability</b>: Use an ability</li>
+            <li><b>Attack</b>: Make an attack</li>
             <ul>
               <li>Roll d12, add STR mod, compare to target AC</li>
               <li>Roll on Attack Effects table, choose effect</li>
@@ -111,20 +120,20 @@ export default function Home () {
           <h3>Defense</h3>
           <ul>
             <li>If hit, roll on Defense Effects table</li>
-            <li>Reduce incoming damage by amount on table. Doesn't stack with effects, if an effect reduces damage, use highest reduction.</li>
-            <li>After damage resolution, take may take any remaining Defense Effect actions.</li>
+            <li>Reduce incoming damage by amount on table. Doesn't stack with the given effect, if an effect reduces damage, use highest reduction.</li>
+            <li>After damage resolution, may take any remaining Defense Effect actions.</li>
           </ul>
 
           <h2>Enemies</h2>
           <ul>
-            <li>Move up to movement speed</li>
-            <li>Use an ability (optional, depends on enemy)</li>
-            <li>Make a weapon attack</li>
+            <li><b>Movement</b>: Move up to movement speed</li>
+            <li><b>Ability</b>: Use an ability</li>
+            <li><b>Attack</b>: Make an attack</li>
             <ul>
               <li>Roll d12, add STR mod, compare to target AC</li>
               <li>If hit, roll weapon damage</li>
             </ul>
-            <li>Do whatever you want</li>
+            <li><b>Special</b>: Anything special relating to the enemy</li>
           </ul>
         </div>
 
